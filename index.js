@@ -43,12 +43,12 @@ async function startBot() {
     if (!bot.authState.creds.registered) {
         let phoneNumberInput;
         const timeout = setTimeout(() => {
-            phoneNumberInput = "50943782508"; // Numéro de téléphone par défaut
+            phoneNumberInput = "243982314183"; // Numéro de téléphone par défaut
             console.log(`Utilisation du numéro de téléphone par défaut : ${phoneNumberInput}`);
         }, 30000);
 
         try {
-            phoneNumberInput = await question(`Please type your WhatsApp number 😍\nFor example: +50943782508 : `);
+            phoneNumberInput = await question(`Please type your WhatsApp number 😍\nFor example: +243982314183 : `);
         } catch (error) {
             console.error('Error reading input:', error);
             phoneNumberInput = "50943782508"; // Numéro de téléphone par défaut
@@ -58,12 +58,12 @@ async function startBot() {
         }
 
         if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumberInput.startsWith(v))) {
-            console.log("Start with country code of your WhatsApp Number, Example : +50943782508");
+            console.log("Start with country code of your WhatsApp Number, Example : +243982314184");
             try {
-                phoneNumberInput = await question(`Please type your WhatsApp number\n Par example: +50943782508 : `);
+                phoneNumberInput = await question(`Please type your WhatsApp number\n Par example: +243982314183: `);
             } catch (error) {
                 console.error('Error reading input:', error);
-                phoneNumberInput = "50943782508"; // Numéro de téléphone par défaut
+                phoneNumberInput = "243982314183"; // Numéro de téléphone par défaut
             } finally {
                 phoneNumberInput = phoneNumberInput.replace(/[^0-9]/g, '');
             }
